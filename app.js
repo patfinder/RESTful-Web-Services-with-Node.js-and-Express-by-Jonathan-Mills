@@ -7,7 +7,15 @@ const port = process.env.PORT || 3000;
 mongoose.connect('mongodb://localhost/test');
 const Book = require('./models/bookModel');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 bookRouter.route('/books')
+  .post((req, res) => {
+    const book = new Book(req.body);
+    book.save();
+    return res.status(201).json(book);
+  })
   .get((req, res) => {
     const query = {};
     if (req.query.genre) {
