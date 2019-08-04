@@ -6,13 +6,20 @@ const bookRouter = require('./routes/bookRouter')(Book);
 const app = express();
 
 const port = process.env.PORT || 3000;
-mongoose.connect('mongodb://localhost/test');
+if (process.env.ENV === 'Test') {
+  mongoose.connect('mongodb://localhost/test');
+} else {
+  mongoose.connect('mongodb://localhost/dev');
+}
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/api', bookRouter);
 
-app.listen(port, () => {
+app.server = app.listen(port, () => {
   console.log(`Running on port ${port}`);
 });
+
+module.exports = app;
