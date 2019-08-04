@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 if (process.env.ENV === 'Test') {
   mongoose.connect('mongodb://localhost/test');
 } else {
-  mongoose.connect('mongodb://localhost/dev');
+  mongoose.connect('mongodb://localhost/test');
 }
 
 
