@@ -1,3 +1,5 @@
+[![Known Vulnerabilities](https://snyk.io/test/github/SurajKhayamali/RESTful-Web-Services-with-Node.js-and-Express-by-Jonathan-Mills/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SurajKhayamali/RESTful-Web-Services-with-Node.js-and-Express-by-Jonathan-Mills?targetFile=package.json)
+
 Pluralsight - RESTful Web Services with Node.js and Express
 By: Jonathan Mills
 
